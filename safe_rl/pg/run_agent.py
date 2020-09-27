@@ -382,7 +382,8 @@ def run_polopt_agent(env_fn,
             logger.store(VVals=v_t, CostVVals=vc_t)
 
             o = o2
-            ep_ret += r
+            # ep_ret += r
+            ep_ret += info.get('goal_met', 0.0)
             ep_cost += c
             ep_len += 1
 
